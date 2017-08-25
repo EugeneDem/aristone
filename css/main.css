@@ -606,6 +606,7 @@ img {
 
 .app-header-top__inner {
   display: inline-block;
+  box-sizing: border-box;
   padding: 13px 10px 0;
   max-width: 480px;
   vertical-align: top;
@@ -614,6 +615,7 @@ img {
 }
 
 .app-header-top__inner b {
+  font-weight: normal;
   font-family: "ProximaNovaBold";
 }
 
@@ -1184,8 +1186,8 @@ textarea.app-contact-us__control {
 }
 
 .app-timeline-slider .slick-dots {
-  bottom: -25px;
-  margin-left: 0;
+  bottom: -20px;
+  margin: 0;
 }
 
 .app-timeline-slider .slick-dots li button:before {
@@ -1205,6 +1207,7 @@ textarea.app-contact-us__control {
   top: -110px;
   z-index: 2;
   visibility: hidden;
+  box-sizing: border-box;
   margin-top: 5px;
   padding-bottom: 10px;
   width: 390px;
@@ -1244,6 +1247,7 @@ textarea.app-contact-us__control {
 }
 
 .app-timeline-modal__title {
+  margin: 0;
   margin-bottom: 11px;
   color: #1c1b1c;
   text-transform: uppercase;
@@ -1339,6 +1343,7 @@ textarea.app-contact-us__control {
 
 .app-navbar__item {
   display: flex;
+  box-sizing: border-box;
   padding-right: 15px;
   padding-left: 15px;
   width: 260px;
@@ -1500,6 +1505,7 @@ textarea.app-contact-us__control {
 
 .app-product-info__navbar-select {
   display: none;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 4px 5px;
   width: 314px;
@@ -1662,7 +1668,7 @@ textarea.app-contact-us__control {
 }
 
 .app-product-slider .slick-dots {
-  margin-left: 0;
+  margin: 0;
 }
 
 .app-product-slider .slick-dots li button:before {
