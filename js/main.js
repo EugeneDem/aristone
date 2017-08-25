@@ -275,9 +275,7 @@ var historySlider = {
 			var video = slick.$slides.eq(slide).find('video').get(0);
 			video.pause();
 			video.currentTime = 0.0;
-			// productSlider.sliderNav.find('.active').removeClass('active').end().children().eq(nextSlide).addClass('active');
 		}).on('afterChange', function (event, slick, currentSlide) {
-			// slick.$slides.eq(currentSlide).addClass('animated');
 			var video = slick.$slides.eq(currentSlide).find('video').get(0);
 			video.play();
 
@@ -293,8 +291,6 @@ var historySlider = {
 			arrows: true,
 			dots: false,
 			speed: 500,
-			// autoplay: true,
-			// autoplaySpeed: 5000,
 			responsive: [
 				{
 					breakpoint: 767,
@@ -377,12 +373,12 @@ var timelineSlider = {
 	init: function(){
 		var item = {};
 		var data = [];
-		var map = Array.prototype.map;
 		var curItem;
 		var curElem;
 
 		timelineSlider.slider.on('beforeChange', function (event, slick, slide, nextSlide) {
-			slick.$slides.find('is-active').removeClass('is-active');
+			console.log('t= ', slick.$slides);
+			timelineSlider.slider.find('.app-timeline-slider__item.is-active').removeClass('is-active');
 			$('.app-timeline').find('.app-timeline-modal').hide().remove();
 		}).on('breakpoint', function (event, slick) {
 			setTimeout(function () {
@@ -398,8 +394,6 @@ var timelineSlider = {
 			var modalHeight;
 			var posLeft = 0;
 	
-			// console.log('left= ', $(this).offset().left);
-			// console.log('t-width= ', self.width());
 			curItem = $(this).closest('.app-timeline-slider__item');
 			curElem = $(this).closest('.app-timeline-card');
 			if(!curItem.hasClass('is-active')) {
@@ -414,7 +408,6 @@ var timelineSlider = {
 				$('.app-timeline').prepend(item);
 				modalWidth = $('.app-timeline-modal').width() / 2;
 				modalHeight = $('.app-timeline-modal').outerHeight();
-				// console.log('modal-width= ', $('.app-timeline-modal').width());
 				if (Math.round(self.offset().left + (self.width() / 2) - modalWidth) > 0) {
 					if (Math.round(self.offset().left + (self.width() / 2) + modalWidth) > $(window).width()) {
 						posLeft = $(window).width() - (modalWidth * 2) - 10;
@@ -457,7 +450,6 @@ var productBgAnimate = {
 		$(window).on("scroll", function() {
 			var posTop = 0;
 			var posLeft = ($(window).scrollTop() / $('.app-product').outerHeight()) * 20;
-			// console.log('pos= ', pos);
 			posTop = ($(window).width() > 767) ? "-25%" : "0";
 			if ($(window).scrollTop() >= $('.app-product').offset().top - 400 && $(window).scrollTop() < $('.app-product').offset().top + $('.app-product').outerHeight()) {
 				$('.app-product__bg-img').css({'transform' : 'translate(' + posLeft + '%, ' + posTop + ')'});
@@ -506,7 +498,6 @@ var modalVideo = {
 
 	onPlayerReady: function (event) {
 		event.target.setVolume(10);
-		//event.target.playVideo();
 	},
 
 	onPlayerStateChange: function (event) {

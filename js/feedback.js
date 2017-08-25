@@ -1,6 +1,5 @@
 var feedback = {
 	$Form: null,
-	focusValue: 1,
 	params: {},
 	validation: function (e) {
 		var $this = $(e.currentTarget);
@@ -31,8 +30,8 @@ var feedback = {
 					return false;
 				}
 				
-				if (tmp.val().length < 5) {
-					tmp.parent().find('.js-error-text').empty().text('Поля "Ваше имя" должно содержать не менее 5 символов');
+				if (tmp.val().length < 2) {
+					tmp.parent().find('.js-error-text').empty().text('Поля "Ваше имя" должно содержать не менее 2 символов');
 					tmp.parent().addClass('is-error');
 					isError = true;
 					return false;
@@ -52,7 +51,6 @@ var feedback = {
 			if(tmpName == 'feedbackEmail'){
 				var regexp = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 				if(Utilities.trimSpace(tmp.val()) == ''){
-					console.log('email-1');
 					tmp.parent().find('.js-error-text').empty().text('Обязательное поле для заполнения');
 					tmp.parent().addClass('is-error');
 					isError = true;
@@ -60,7 +58,6 @@ var feedback = {
 				}
 
 				if (!Utilities.trimSpace(tmp.val()) == '' && regexp.test(tmp.val()) !== true) {
-					console.log('email-2');
 					tmp.parent().find('.js-error-text').empty().text('Некорректный email адрес');
 					tmp.parent().addClass('is-error');
 					isError = true;
@@ -105,11 +102,11 @@ var feedback = {
 
 		$('.field-name.js-requere').on('blur', function(e) {
 			if(!Utilities.trimSpace(this.value) == ''){
-				if (this.value.length < 5) {
+				if (this.value.length < 2) {
 					if (this.value == '	') {
 						this.value = '';
 					}
-					$(this).parent().find('.js-error-text').empty().text('Поля "Ваше имя" должно содержать не менее 5 символов');
+					$(this).parent().find('.js-error-text').empty().text('Поля "Ваше имя" должно содержать не менее 2 символов');
 					$(this).parent().addClass('is-error');
 					return false;
 				}
@@ -131,7 +128,7 @@ var feedback = {
 			}
 		});
 		
-		$(document).on('click', '.js-feedback', { jForm: $('#feedback')}, self.validation);
+		$(document).on('click', '.js-feedback-submit', { jForm: $('#feedback')}, self.validation);
 		$(document).on('click', '.js-error-hidden', self.hiddenError);
 	}
 }

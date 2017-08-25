@@ -1148,6 +1148,10 @@ textarea.app-contact-us__control {
   position: relative;
 }
 
+.app-timeline-slider__item:focus {
+  outline: medium none;
+}
+
 .app-timeline-slider .slick-next,.app-timeline-slider .slick-prev {
   margin-top: -25px;
   width: 50px;

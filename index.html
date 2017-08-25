@@ -38,44 +38,46 @@
                 <div class="app-contact-us__close js-contact-us-close"></div>
               </div>
               <div class="app-contact-us__content js-contact-us-content">
-                <div class="app-contact-us__content-inner">
-                  <!-- .app-contact-us__group.is-error-->
-                  <div class="app-contact-us__group">
-                    <div class="app-contact-us__select js-select">
-                      <div class="app-contact-us__control js-select-target"><span class="app-contact-us__select-caption">По одной из следующих тем...</span><i class="app-contact-us__caret"></i>
-                        <input type="hidden" value="1">
+                <form id="contactus" autocomplete="off" name="feedback" enctype="multipart/form-data" action="">
+                  <div class="app-contact-us__content-inner">
+                    <!-- .app-contact-us__group.is-error-->
+                    <div class="app-contact-us__group">
+                      <div class="app-contact-us__select js-select">
+                        <div class="app-contact-us__control js-select-target"><span class="app-contact-us__select-caption">По одной из следующих тем...</span><i class="app-contact-us__caret"></i>
+                          <input type="hidden" value="0" name="contactusQuestion" class="js-requere">
+                        </div>
+                        <div class="app-contact-us__select-options js-select-list">
+                          <div data-value="О проекте &amp;laquo;Дом за год&amp;raquo;" class="app-contact-us__select-option">О&nbsp;проекте &laquo;Дом за&nbsp;год&raquo;</div>
+                          <div data-value="О котлах Ariston" class="app-contact-us__select-option">О&nbsp;котлах Ariston</div>
+                          <div data-value="На свободную тему" class="app-contact-us__select-option">На&nbsp;свободную тему</div>
+                        </div>
                       </div>
-                      <div class="app-contact-us__select-options js-select-list">
-                        <div data-value="О проекте &amp;laquo;Дом за год&amp;raquo;" class="app-contact-us__select-option">О&nbsp;проекте &laquo;Дом за&nbsp;год&raquo;</div>
-                        <div data-value="О котлах Ariston" class="app-contact-us__select-option">О&nbsp;котлах Ariston</div>
-                        <div data-value="На свободную тему" class="app-contact-us__select-option">На&nbsp;свободную тему</div>
+                      <div class="app-contact-us__error js-error">
+                        <div class="app-contact-us__error-text js-error-text">Выберите тему вопроса</div>
+                        <div class="app-contact-us__error-close js-error-hidden"></div>
                       </div>
                     </div>
-                    <div class="app-contact-us__error js-error">
-                      <div class="app-contact-us__error-text js-error-text">Выберите тему вопроса</div>
-                      <div class="app-contact-us__error-close js-error-hidden"></div>
+                    <!-- .app-contact-us__group.is-error-->
+                    <div class="app-contact-us__group">
+                      <textarea type="text" name="contactusMessage" placeholder="Сообщение" class="app-contact-us__control contact-field-text js-requere"></textarea>
+                      <div class="app-contact-us__error js-error">
+                        <div class="app-contact-us__error-text js-error-text">Сообщение не должно содержать английские символы</div>
+                        <div class="app-contact-us__error-close js-error-hidden"></div>
+                      </div>
+                    </div>
+                    <!-- .app-contact-us__group.is-error-->
+                    <div class="app-contact-us__group">
+                      <input type="text" name="contactusEmail" placeholder="Вписать свой e-mail адрес" class="app-contact-us__control contact-field-email js-requere">
+                      <div class="app-contact-us__error js-error">
+                        <div class="app-contact-us__error-text js-error-text">Адрес электронной почты должен содержать "@".</div>
+                        <div class="app-contact-us__error-close js-error-hidden"></div>
+                      </div>
+                    </div>
+                    <div class="app-contact-us__group">
+                      <div class="app-btn app-btn_blue js-contactus-submit">Задать</div>
                     </div>
                   </div>
-                  <!-- .app-contact-us__group.is-error-->
-                  <div class="app-contact-us__group">
-                    <textarea type="text" name="" placeholder="Сообщение" class="app-contact-us__control"></textarea>
-                    <div class="app-contact-us__error js-error">
-                      <div class="app-contact-us__error-text js-error-text">Сообщение не должно содержать английские символы</div>
-                      <div class="app-contact-us__error-close js-error-hidden"></div>
-                    </div>
-                  </div>
-                  <!-- .app-contact-us__group.is-error-->
-                  <div class="app-contact-us__group">
-                    <input type="text" name="" placeholder="Вписать свой e-mail адрес" class="app-contact-us__control">
-                    <div class="app-contact-us__error js-error">
-                      <div class="app-contact-us__error-text js-error-text">Адрес электронной почты должен содержать "@".</div>
-                      <div class="app-contact-us__error-close js-error-hidden"></div>
-                    </div>
-                  </div>
-                  <div class="app-contact-us__group">
-                    <div class="app-btn app-btn_blue js-contact-us-send">Задать</div>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
             <div class="app-about">
@@ -351,7 +353,7 @@
                           </div>
                           <div class="app-feedback__list-item app-feedback__list-item_full">
                             <div class="app-feedback__group">
-                              <div class="app-btn app-btn_red js-feedback">Подписаться</div>
+                              <div class="app-btn app-btn_red js-feedback-submit">Подписаться</div>
                             </div>
                           </div>
                         </div>
