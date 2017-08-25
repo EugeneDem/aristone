@@ -530,9 +530,9 @@ var modalVideo = {
 		var self = this;
 		var ytId = $(elem).data('video');
 		$('.app').addClass('app-modal-open');
-		$(id).collapse('show').before('<div class="app-modal__backdrop fade"></div>').add($('.app-modal__backdrop').addClass('in').css('height', '110%'));
+		$(id).show().addClass('in').before('<div class="app-modal__backdrop fade"></div>').add($('.app-modal__backdrop').addClass('in').css('height', '110%'));
 
-		$(document).on('click.bs.collapse', '.app-modal .yt-close', function() {
+		$(document).on('click', '.app-modal .yt-close', function() {
 			modalVideo.hideModal(id);
 		});
 
@@ -541,7 +541,7 @@ var modalVideo = {
 
 	hideModal: function (elem) {
 		if($('.collapse.in').is(':visible')){
-			$(elem).collapse('hide');
+			$(elem).hide().removeClass('in');
 			$('.app-modal__backdrop').fadeOut(function () {
 				this.remove();
 			});
